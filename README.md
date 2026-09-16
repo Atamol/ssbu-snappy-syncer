@@ -18,6 +18,8 @@ No plugin dependencies.
 
 Stock clocks held the 4 frame reduction up to 13.0.4 and no longer do on 13.0.5, so the cpu clock is raised.
 
+Also, it runs at 720p instead of 1080p (FHD) by default. You can switch to 1080p in the config, but lag might occur in some scenes. If that is a concern, try using [ssbu-combat-latency-slider](https://github.com/Atamol/ssbu-combat-latency-slider) + [ssbu-vsync-disabler](https://github.com/Atamol/ssbu-vsync-disabler) instead.
+
 * Heavy HS, heavy KO cutscenes and the foreground KO bug
 
 None of the lags on heavy hitstop, heavy KO cutscenes or a foreground KO.
