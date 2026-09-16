@@ -50,3 +50,7 @@ Written to `sd:/ultimate/ssbu-snappy-syncer/config.txt` on first launch.
 | `overclock_profile`    | auto               | `singles`: 1428, `ffa`: 1683, auto: by player count (3 or more raises the clock) |
 | `overclock_custom`     | `1785,1267,1996` | `cpu,gpu,mem` in MHz, docked only                                                  |
 | `legacy_sync`          | `false`          |                                                                                      |
+
+## Terms
+
+Reverse engineering (including decompilation and disassembly) and redistribution are not allowed. Don't rehost, repackage, or mirror the files. Link to the release instead.
