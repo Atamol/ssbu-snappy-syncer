@@ -2,7 +2,7 @@
 
 # ssbu-snappy-syncer
 
-大乱闘スマッシュブラザーズ SPECIALの操作遅延を4F削るMod．他の低遅延Modと役割は同じですが，[ssbu-online-deluxe](https://github.com/saad-script/ssbu-online-deluxe)と同じく最大の遅延を安定して削ることができ，対戦相手や他人に情報が表示されないためModの有無が分かりにくいです．
+大乱闘スマッシュブラザーズ SPECIALのオンライン対戦の操作遅延を4F削るMod．他の低遅延Modと役割は同じですが，[ssbu-online-deluxe](https://github.com/saad-script/ssbu-online-deluxe)と同じく最大の遅延を安定して削ることができ，対戦相手や他人に情報が表示されないためModの有無が分かりにくいです．
 
 [ssbu-combat-latency-slider](https://github.com/Atamol/ssbu-combat-latency-slider)とは同時に使用可能ですが，[ssbu-vsync-disabler](https://github.com/Atamol/ssbu-vsync-disabler)とは競合します．
 
@@ -14,7 +14,7 @@
 
 他のプラグインに依存しません．
 
-* オーバークロック，解像度の制限
+* オーバークロック，低解像度化
 
 13.0.4までは素のクロックで-4Fの低遅延を維持できましたが，13.0.5では不可能なためクロックを調整しています．
 
@@ -24,6 +24,11 @@
 
 重いヒットストップ，重い撃墜演出，手前撃墜の時に起こるラグがありません (OC有効時)．
 
+* オンラインで動作
+
+すべてのオンラインのモードで動作し，オフラインのモード (トレモ，CPU戦など) では無効となります (オーバークロックと低解像度化は常に有効)．
+オフラインでも有効にしたい場合は，configに`offline_vanilla=false`を追加してください．
+
 ## インストール
 
 1. [Release](https://github.com/Atamol/ssbu-snappy-syncer/releases)から最新の`atmosphere`フォルダをSDカードのルートにコピー
@@ -31,7 +36,7 @@
 
 ## 設定
 
-初回起動時に `sd:/ultimate/ssbu-snappy-syncer/config.txt` が生成されます．
+初回起動時に `sd:/ultimate/ssbu-snappy-syncer/config.txt` が生成されます．v1.0.0で生成されたconfigはそのまま使われるため，`offline_vanilla` を変更する場合は行を追加してください．
 
 **原則として，デフォルトのまま使用してください**．
 
@@ -45,6 +50,7 @@
 | `pacer`                | `true`           |                                                                                              |
 | `cutin_render_opts`    | `true`           | 撃墜演出の間だけ描画最適化を切る                                                             |
 | `match_only_immediate` | `true`           |                                                                                              |
+| `offline_vanilla`      | `true`           | オフラインでは無効にする．`false`: オフラインでも有効にする (重い場面ではラグが起きうる)     |
 | `overclock`            | `true`           |                                                                                              |
 | `overclock_by_match`   | `true`           |                                                                                              |
 | `overclock_profile`    | auto               | `singles`: 1428，`ffa`: 1683，auto: 人数で自動選択 (3人乱闘以上になるとクロックが上がる) |

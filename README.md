@@ -2,7 +2,7 @@
 
 # ssbu-snappy-syncer
 
-Cuts 4F of input delay from Super Smash Bros. Ultimate. Serves the same purpose as other low-latency mods like [ssbu-online-deluxe](https://github.com/saad-script/ssbu-online-deluxe), but holds up reliably under load and makes the mod usage subtle enough that opponents or third parties won't notice.
+Cuts 4F of input delay from Super Smash Bros. Ultimate in online matches. Serves the same purpose as other low-latency mods like [ssbu-online-deluxe](https://github.com/saad-script/ssbu-online-deluxe), but holds up reliably under load and makes the mod usage subtle enough that opponents or third parties won't notice.
 
 Compatible with [ssbu-combat-latency-slider](https://github.com/Atamol/ssbu-combat-latency-slider), but INCOMPATIBLE with [ssbu-vsync-disabler](https://github.com/Atamol/ssbu-vsync-disabler). Do not use this mod and [ssbu-vsync-disabler](https://github.com/Atamol/ssbu-vsync-disabler) at the same time.
 
@@ -14,7 +14,7 @@ Compatible with [ssbu-combat-latency-slider](https://github.com/Atamol/ssbu-comb
 
 No plugin dependencies.
 
-* Overclock
+* Overclock, lower resolution
 
 Stock clocks held the 4 frame reduction up to 13.0.4 and no longer do on 13.0.5, so the cpu clock is raised.
 
@@ -24,6 +24,11 @@ Also, it runs at 720p instead of 1080p (FHD) by default. You can switch to 1080p
 
 None of the lags on heavy hitstop, heavy KO cutscenes or a foreground KO.
 
+* Runs online
+
+Works in every online mode and is disabled in offline modes like training and CPU matches (the overclock and the lower resolution are always on).
+To enable it offline too, add `offline_vanilla=false` to the config.
+
 ## Install
 
 1. Copy the `atmosphere` folder from [Release](https://github.com/Atamol/ssbu-snappy-syncer/releases) to the root of your SD card
@@ -31,7 +36,7 @@ None of the lags on heavy hitstop, heavy KO cutscenes or a foreground KO.
 
 ## Config
 
-Written to `sd:/ultimate/ssbu-snappy-syncer/config.txt` on first launch.
+Written to `sd:/ultimate/ssbu-snappy-syncer/config.txt` on first launch. A config made by v1.0.0 is kept as is, so add the `offline_vanilla` line yourself if you want to change it.
 
 **Leave it on the defaults unless you have a reason not to**.
 
@@ -45,6 +50,7 @@ Written to `sd:/ultimate/ssbu-snappy-syncer/config.txt` on first launch.
 | `pacer`                | `true`           |                                                                                      |
 | `cutin_render_opts`    | `true`           | drops render opts for the length of the KO                                           |
 | `match_only_immediate` | `true`           |                                                                                      |
+| `offline_vanilla`      | `true`           | disabled offline. `false`: enabled offline too, heavy scenes can lag                 |
 | `overclock`            | `true`           |                                                                                      |
 | `overclock_by_match`   | `true`           |                                                                                      |
 | `overclock_profile`    | auto               | `singles`: 1428, `ffa`: 1683, auto: by player count (3 or more raises the clock) |
